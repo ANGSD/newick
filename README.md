@@ -16,3 +16,32 @@ serialize(nd,lst);
 for(int i=0;i<serial;i++)
   print_node(stderr,lst[i]);
 ````
+
+This printouts out
+```
+newick: (A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;
+serial: 6
+----------
+nd->serial: 0 this: 0x7f93a0405a70
+nd->name: F nd->blen: -1.000000 nd->up:0x0
+----------
+----------
+nd->serial: 1 this: 0x7f93a0405ab0
+nd->name: A nd->blen: 0.100000 nd->up:0x7f93a0405a70
+----------
+----------
+nd->serial: 2 this: 0x7f93a0405b00
+nd->name: B nd->blen: 0.200000 nd->up:0x7f93a0405a70
+----------
+----------
+nd->serial: 3 this: 0x7f93a0405b50
+nd->name: E nd->blen: 0.500000 nd->up:0x7f93a0405a70
+----------
+----------
+nd->serial: 4 this: 0x7f93a0405b90
+nd->name: C nd->blen: 0.300000 nd->up:0x7f93a0405b50
+----------
+----------
+nd->serial: 5 this: 0x7f93a0405be0
+nd->name: D nd->blen: 0.400000 nd->up:0x7f93a0405b50
+
