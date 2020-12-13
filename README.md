@@ -5,11 +5,13 @@ Some c++ anc c code for parsing newick trees. This code works for arbitrary bran
 
 ```c++
 char * newick =   "(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;";
+fprint(stderr,"newick: %s",newick);
 //split into relevant tokens
 tokens *vec=mysplit3(strdup(newick));
 //parse everything
 node_t *nd = parse(vec);
 //now serialize and printout
+fprintf(stderr,"serial: %d\n",serial);
 node_t **lst = calloc(serial,sizeof(node_t*));
 serialize(nd,lst);
   
@@ -17,7 +19,7 @@ for(int i=0;i<serial;i++)
   print_node(stderr,lst[i]);
 ````
 
-This printouts out
+This prints out
 ```
 newick: (A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;
 serial: 6
